@@ -26,7 +26,7 @@ controller.create = async(req, res) => {
 
         const newStoreProduct = await storeProduct.save();
 
-        let productCollection = await ProductCollection.findOne({}).where({ _id_store: _id_store });
+        let productCollection = await ProductCollection.findOne({_id_product_collection: _id_product_collection});
         productCollection.product_collections = productCollection.product_collections.concat(newStoreProduct._id);
         await productCollection.save();
 
