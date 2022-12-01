@@ -35,7 +35,7 @@ const Login = () => {
       e.preventDefault();
   
     const { identifier, password } = state;
-    fetch("https://tienduki.up.railway.app/api/auth/signin/", {
+    fetch("https://tienduki-production.up.railway.app/api/auth/signin/", {
       method:"POST",
       crossDomain:true,
       headers:{

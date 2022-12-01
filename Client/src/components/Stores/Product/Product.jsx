@@ -19,7 +19,7 @@ const Product = () => {
 
     const GetProduct = () => {
         setIsLoading(true)
-        fetch(`https://tienduki.up.railway.app/api/storeProduct/id/${idProduct}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/storeProduct/id/${idProduct}`, {
             crossDomain: true,
             headers: {
                 "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Product = () => {
 
     const getStoreActivity = () => {
         setActivityDone(false);
-        fetch(`https://tienduki.up.railway.app/api/clientActivity/getStoreActById/${useAuth().user._id}/Product`)
+        fetch(`https://tienduki-production.up.railway.app/api/clientActivity/getStoreActById/${useAuth().user._id}/Product`)
         .then(
             response => response.json().then(data => {
                 setActivity(data);
@@ -71,7 +71,7 @@ const Product = () => {
     }
 
     const saveStoreActivity = () => {
-        fetch(`https://tienduki.up.railway.app/api/activity/`, {
+        fetch(`https://tienduki-production.up.railway.app/api/activity/`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ const Product = () => {
     }
 
     const UpdateActivity = (activityToUpdate) => {
-        fetch(`https://tienduki.up.railway.app/api/activity/${activityToUpdate.id_activity._id}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/activity/${activityToUpdate.id_activity._id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',

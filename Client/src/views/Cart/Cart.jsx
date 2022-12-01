@@ -55,7 +55,7 @@ const Cart = () => {
     }
 
     const OrderDetails = (product, order_id, store) => {
-        fetch(`https://tienduki.up.railway.app/api/orderDetail/`, {
+        fetch(`https://tienduki-production.up.railway.app/api/orderDetail/`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const Cart = () => {
     const Order = (e) => {
         const dataId = e.target.id;
         const products = data.find(element => element.id === dataId).Products;
-        fetch(`https://tienduki.up.railway.app/api/order/`, {
+        fetch(`https://tienduki-production.up.railway.app/api/order/`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ const Card = ( {extraclasses = [], type = "", activity = false} ) => {
 
     const getActivity = () => {
         setActivityDone(false);
-        fetch(`https://tienduki.up.railway.app/api/clientActivity/Store/${useAuth().user._id}`)
+        fetch(`https://tienduki-production.up.railway.app/api/clientActivity/Store/${useAuth().user._id}`)
         .then(
             response => response.json().then(data => {
                 setData(data);

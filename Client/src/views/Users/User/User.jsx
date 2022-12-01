@@ -27,7 +27,7 @@ const User = () => {
 
     const GetUser = () => {
         setIsLoading(true);
-        fetch(`https://tienduki.up.railway.app/api/user/${id}`)
+        fetch(`https://tienduki-production.up.railway.app/api/user/${id}`)
         .then(
             response => {
                 if (response.ok) {
@@ -92,7 +92,7 @@ const User = () => {
 
     const saveUser = () => {
         if (verifyUserInfo()){
-            fetch(`https://tienduki.up.railway.app/api/user/${id ? id : ""}`, {
+            fetch(`https://tienduki-production.up.railway.app/api/user/${id ? id : ""}`, {
                 method: id ? 'PUT' : "POST",
                 headers: {
                     'Content-Type': 'application/json',

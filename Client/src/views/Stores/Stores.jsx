@@ -21,7 +21,7 @@ const Stores = () => {
 
     const GetStores = () => {
         setIsLoading(true);
-        fetch("https://tienduki.up.railway.app/api/storeCategory/limit/9")
+        fetch("https://tienduki-production.up.railway.app/api/storeCategory/limit/9")
         .then(
             response => response.json().then(data => {
                 setData(data);                

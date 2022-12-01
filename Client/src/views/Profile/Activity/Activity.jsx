@@ -16,7 +16,7 @@ const Activity = () => {
 
     const GetProducts = () => {
         setActivityDone(false);
-        fetch(`https://tienduki.up.railway.app/api/clientActivity/Product/${useAuth().user._id}`)
+        fetch(`https://tienduki-production.up.railway.app/api/clientActivity/Product/${useAuth().user._id}`)
         .then(
             response => response.json().then(data => {
                 setProduct(data);

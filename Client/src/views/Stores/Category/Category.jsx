@@ -18,7 +18,7 @@ const Category = () => {
 
     const GetProductsCategory = () => {
         setIsLoading(true);
-        fetch(`https://tienduki.up.railway.app/api/storeCategory/storeCategory/${Category}`)
+        fetch(`https://tienduki-production.up.railway.app/api/storeCategory/storeCategory/${Category}`)
         .then(
             response => response.json().then(data => {
                 setStores(data);

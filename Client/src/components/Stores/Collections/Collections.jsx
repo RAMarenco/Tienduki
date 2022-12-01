@@ -14,7 +14,7 @@ const Collections = ({id="", Store=""}) => {
 
     const getCollections = () =>{
         setIsLoading(true)
-        fetch(`https://tienduki.up.railway.app/api/productCollection/${id}`).then(
+        fetch(`https://tienduki-production.up.railway.app/api/productCollection/${id}`).then(
             response => response.json().then(data => {
                 setCollections(data);
                 setIsLoading(false);
@@ -26,7 +26,7 @@ const Collections = ({id="", Store=""}) => {
     }
 
     const getFavorites = () => {
-        fetch(`https://tienduki.up.railway.app/api/clientWishList/All/${useAuth().user._id}/`).then(
+        fetch(`https://tienduki-production.up.railway.app/api/clientWishList/All/${useAuth().user._id}/`).then(
             response => response.json().then(data => {
                 setFavorites(data);                
             })

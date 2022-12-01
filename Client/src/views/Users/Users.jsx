@@ -28,7 +28,7 @@ const Users = () => {
 
     const GetUsers = () => {
         setIsLoading(true);
-        fetch("https://tienduki.up.railway.app/api/user/").then(
+        fetch("https://tienduki-production.up.railway.app/api/user/").then(
             response => response.json().then(data => {
                 setUsers(data);
                 setIsLoading(false);
@@ -40,7 +40,7 @@ const Users = () => {
     }
 
     const banUser = (user) => {
-        fetch(`https://tienduki.up.railway.app/api/user/${user._id}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/user/${user._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

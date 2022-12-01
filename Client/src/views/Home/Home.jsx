@@ -12,7 +12,7 @@ const Home = () => {
     const [isloading, setIsLoading] = useState(true);
 
     const getUser = () => {
-        fetch(`https://tienduki.up.railway.app/api/user/${useAuth().user._id}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/user/${useAuth().user._id}`, {
             crossDomain: true,
             headers: {
                 "Content-Type": "application/json",

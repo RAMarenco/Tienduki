@@ -25,7 +25,7 @@ const Store = () => {
     
     const fetchData = () => {
         setIsLoading(true);     
-        fetch(`https://tienduki.up.railway.app/api/storeCategory/byId/${id}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/storeCategory/byId/${id}`, {
             crossDomain: true,
             headers: {
                 "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const Store = () => {
     }
 
     const fetchRatingData = () => {        
-        fetch(`https://tienduki.up.railway.app/api/storeRating/${id}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/storeRating/${id}`, {
             crossDomain: true,
             headers: {
                 "Content-Type": "application/json",
@@ -78,7 +78,7 @@ const Store = () => {
     }
 
     const postRating = (rating) => {
-        fetch(`https://tienduki.up.railway.app/api/storeRating/`, {
+        fetch(`https://tienduki-production.up.railway.app/api/storeRating/`, {
             method: "POST",
             crossDomain: true,
             headers: {
@@ -104,7 +104,7 @@ const Store = () => {
 
     const getStoreActivity = () => {
         setActivityDone(false);
-        fetch(`https://tienduki.up.railway.app/api/clientActivity/getStoreActById/${useAuth().user._id}/Store`, {
+        fetch(`https://tienduki-production.up.railway.app/api/clientActivity/getStoreActById/${useAuth().user._id}/Store`, {
             crossDomain: true,
             headers: {
                 "Content-Type": "application/json",
@@ -121,7 +121,7 @@ const Store = () => {
     }
 
     const saveStoreActivity = () => {
-        fetch(`https://tienduki.up.railway.app/api/activity/`, {
+        fetch(`https://tienduki-production.up.railway.app/api/activity/`, {
             method: "POST",
             crossDomain: true,
             headers: {
@@ -145,7 +145,7 @@ const Store = () => {
     }
 
     const UpdateActivity = (activityToUpdate) => {
-        fetch(`https://tienduki.up.railway.app/api/activity/${activityToUpdate.id_activity._id}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/activity/${activityToUpdate.id_activity._id}`, {
             method: "DELETE",
             crossDomain: true,
             headers: {

@@ -21,7 +21,7 @@ const AdminStores = () => {
 
     const GetStores = () => {
         setIsLoading(true);
-        fetch("https://tienduki.up.railway.app/api/storeCategory/all")
+        fetch("https://tienduki-production.up.railway.app/api/storeCategory/all")
         .then(
             response => response.json().then(data => {
                 setData(data);
@@ -39,7 +39,7 @@ const AdminStores = () => {
     }
 
     const banUser = (user) => {
-        fetch(`https://tienduki.up.railway.app/api/user/${user._id}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/user/${user._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

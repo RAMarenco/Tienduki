@@ -29,7 +29,7 @@ const Configuration = () => {
     const [formData, setFormData] = useState("");
 
     const addTagPost = (input, social) => {
-        fetch(`https://tienduki.up.railway.app/api/social/`, {
+        fetch(`https://tienduki-production.up.railway.app/api/social/`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const Configuration = () => {
     }
 
     const removeTags = (indextToRemove, idToRemove) => {
-        fetch(`https://tienduki.up.railway.app/api/social/${idToRemove}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/social/${idToRemove}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ const Configuration = () => {
     }
 
     const saveChangesFetch = (body) => {
-        fetch(`https://tienduki.up.railway.app/api/user/${outletContext._id}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/user/${outletContext._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -131,7 +131,7 @@ const Configuration = () => {
     }
 
     const verifyPassword = async (body) => {
-        const get = await fetch("https://tienduki.up.railway.app/api/auth/verify/", {
+        const get = await fetch("https://tienduki-production.up.railway.app/api/auth/verify/", {
             method:"POST",
             crossDomain:true,
             headers:{
@@ -195,7 +195,7 @@ const Configuration = () => {
         const imagenSubida = await response.json();
         
         if (imagePrev !== "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541") {
-            fetch(`https://tienduki.up.railway.app/api/image/${imageId}`, {
+            fetch(`https://tienduki-production.up.railway.app/api/image/${imageId}`, {
                 method: "PUT",
                 crossDomain: true,
                 headers: {
@@ -208,7 +208,7 @@ const Configuration = () => {
                 }),
             })
         }else {
-            fetch("https://tienduki.up.railway.app/api/image/", {
+            fetch("https://tienduki-production.up.railway.app/api/image/", {
             method: "POST",
             crossDomain: true,
             headers: {

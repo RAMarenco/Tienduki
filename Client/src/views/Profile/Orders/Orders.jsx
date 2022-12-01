@@ -16,7 +16,7 @@ const Orders = () => {
     const handleNoAuthMessage = useOutletContext();
 
     const GetOrders = () => {
-        fetch(`https://tienduki.up.railway.app/api/order/${user === "Vendor" ? `store/${useAuth().user._id}` : useAuth().user._id}`).then(
+        fetch(`https://tienduki-production.up.railway.app/api/order/${user === "Vendor" ? `store/${useAuth().user._id}` : useAuth().user._id}`).then(
             response => response.json().then(data => {
                 setOrders(data);
             })
@@ -40,7 +40,7 @@ const Orders = () => {
     };
 
     const handleFinishClick = orderid => (e)=> {
-        fetch(`https://tienduki.up.railway.app/api/orderDetail/${orderid}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/orderDetail/${orderid}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const Orders = () => {
     }
 
     const handleCancelClick = orderid => (e)=> {
-        fetch(`https://tienduki.up.railway.app/api/orderDetail/${orderid}`, {
+        fetch(`https://tienduki-production.up.railway.app/api/orderDetail/${orderid}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
