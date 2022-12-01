@@ -1,0 +1,197 @@
+@import './../../../variables';
+
+.Configuration {
+    max-width: 100%;
+    width: 56.3125em;
+    flex: 1;    
+    border-radius: 0.625em;
+    justify-content: space-between;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.625em;
+    
+    position: relative;
+    
+    > .Profile-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5625em;
+        
+        > input[type="file"] {
+            display: none;
+        }
+
+        > img {
+            object-fit: cover;
+            background-color: $secondary-color-light-alt;
+            border-radius: 100%;
+            height: 6.25em;
+            min-width: 6.25em;
+            max-width: 6.25em;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
+            &.imageEdit {                
+                cursor: pointer;
+                transition: 500ms;
+                filter: blur(0);
+                &:hover {
+                    filter: blur(4px);
+                }
+            }
+        }
+
+        > .Profile-info {
+            width: 100%;
+            > h2 {
+                font-size: 1.5em;
+            }
+
+            > input {
+                background-color: transparent;
+                outline: none;
+                border: none;
+                width: 100%;
+                font-size: 0.875em;
+                font-weight: $regular-400;
+
+                &.active-input {
+                    background-color: $secondary-color-light-alt;
+                    border-radius: 0.5em;
+                    border: none;
+                    padding: 0.5em 1em 0.5em 0.5em;
+
+                    &:focus {
+                        outline: 1.5px solid $primary-color-dark;
+                    }
+                }
+            }
+        }
+    }
+
+    > .Profile-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625em;
+
+        > .Personal-info {
+            > h3 {
+                font-size: 1em;
+            }
+        }
+
+        > .Data-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625em;
+
+            > h4 {
+                font-size: 0.875em;
+            }
+
+            > span {
+                font-size: 0.75em;
+                font-weight: $regular-400;
+            }
+
+            > input {
+                background-color: transparent;
+                outline: none;
+                border: none;
+                width: 100%;
+                font-size: 0.875em;
+                font-weight: $regular-400;
+
+                &.active-input {
+                    background-color: $secondary-color-light-alt;
+                    border-radius: 0.5em;
+                    border: none;
+                    padding: 0.5em 1em 0.5em 0.5em;
+
+                    &:focus {
+                        outline: 1.5px solid $primary-color-dark;
+                    }
+                }
+            }
+        }
+    }
+
+    > .Profile-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625em;
+        
+        > .Social-media {
+            > h3 {
+                font-size: 1em;
+            }
+        }
+    }
+
+    > .Buttons {
+        width: 100%;        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625em
+    }
+
+    .btn {
+        width: max-content;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0.5em;
+        transition: 200ms;
+        font-family: $main-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: $primary-color-light;
+            flex: 1;           
+            text-transform: uppercase;
+            font-weight: $semiBold-600;
+            color: $secondary-color-light-alt;            
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: $secondary-color;
+            color: #000;
+            font-weight: $semiBold-600;        
+
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+
+        &.btn-medium-font {
+            > svg {
+                font-size: 1.25em;
+            }                    
+        }
+    }
+
+    hr.Line {
+        width: 100%;
+        max-width: 32.5em;
+        border: 1px solid #000;
+        background-color: #000;
+    }
+    
+    @media (max-width: 600px) {
+        padding: 0.8125em 0.625em;
+        > .Profile-header {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}

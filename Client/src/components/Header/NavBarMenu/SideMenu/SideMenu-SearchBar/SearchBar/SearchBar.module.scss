@@ -1,0 +1,12 @@
+@import "./../../../../../../variables";
+
+.SearchBar {
+    flex: 1;
+    border-radius: 0.5em 0 0 0.5em;
+    border: none;
+    padding-inline: 1em;
+
+    &:focus {
+        outline: 1.5px solid $primary-color-dark;
+    }
+}

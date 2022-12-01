@@ -1,0 +1,58 @@
+@import "./../../../variables";
+
+.StoreCard {
+    display: flex;
+    width: 14.0625em;
+    min-height: 18.75em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 0.625em;
+    overflow: hidden;
+    
+    > a {
+        display: flex;
+        flex-direction: column;
+        
+        text-decoration: none;
+        width: 100%;
+        
+        > .Image-Container {
+            overflow: hidden;
+            width: 100%;
+            height: 14.0625em;
+
+            > img {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: 200ms;
+            }
+
+            > .No-Image {
+                height: 100%;
+                width: 100%;
+                background-color: $secondary-color;
+            }
+        }
+
+        > .StoreName-Container {
+            flex: 1;
+            display: flex;
+            padding-inline: 1.5em;
+            align-items: center;
+            > .Title {
+                word-break: break-all;
+                color: #000;
+            }
+        }
+    }
+
+    &:hover {
+        > a {                    
+            > .Image-Container {
+                > img {
+                    transform: scale(1.115);
+                }
+            }
+        }
+    }
+}

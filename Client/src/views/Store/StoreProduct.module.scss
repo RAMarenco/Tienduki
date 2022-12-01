@@ -1,0 +1,227 @@
+@import './../../variables';
+
+.StoreProducts {
+    flex: 1;
+    padding: 1em 3.125em 3.125em 3.125em;
+    > .Product-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.625em;
+        height: 100%;
+        
+        > .Product-options-main-header {
+            width: 100%;
+            background-color: $secondary-color-light;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 3.75em;
+            padding-inline: 0.78125em;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5em;
+
+            > h4 {
+                font-size: 1.25em;
+                font-weight: $semiBold-600;
+            }
+
+            > .Product-options-main-actions {
+                display: flex;
+                gap: 1.25em;
+
+                button {
+                    &:hover {
+                        background-color: $primary-color-light;
+                        transition: 0.3s;
+                    }
+                }
+
+            > .return {
+                position: absolute;
+                top:0;
+                right: 0;
+
+                height: 100%;
+                width: 3.75em;
+                background-color: $secondary-color-dark;
+                border: none;
+                cursor: pointer;
+                border-radius: 1.875em 0 0 1.875em;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                > svg {
+                    fill: $secondary-color-light-alt;
+                    height: 1.3em;
+                    width: 1.3em;
+                }
+            }
+            }
+        }
+
+        > .AddProduct-container {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 33% 33% 33%;
+            justify-content: center;
+            
+            > div {
+                label {
+                    display: block;
+                    padding-bottom: 0.7em;
+                    font-weight: 600;
+                }
+                
+                input {
+                    margin-bottom: 3em;
+                    width: 75%;
+                    height: 2em;
+                    border-radius: 0.5em;
+                    font-family: $main-font;
+                    padding: 0.8em;
+                    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+                    border: solid 1.75px rgba(204, 204, 204, 0.25);
+                    font-size: 0.95em;
+                    
+                }
+
+                textarea {
+                    max-height: 15em;
+                    max-width: 75%;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    font-family: $main-font;
+                    border-radius: 0.5em;
+                    padding: 0.8em;
+                    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+                    border: solid 1.75px rgba(204, 204, 204, 0.25);
+                    overflow: hidden;
+                    font-size: 0.95em;
+                }
+
+                select {
+                    width: 75%;
+                    font-family: $main-font;
+                    height: 2em;
+                    border-radius: 0.5em;
+                    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+                    border: solid 1.75px rgba(204, 204, 204, 0.25);
+                    color: rgb(65, 65, 65);
+                    font-size: 0.95em;
+                    margin-bottom: 4em;
+                    padding-left: 0.5em;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                button {
+                    width: 75%;
+                    height: 2.5em;
+                    border-radius: 0.5em;
+                    font-family: $main-font;
+                    padding: 0.8em;
+                    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+                    border: solid 1.75px rgba(204, 204, 204, 0.25);
+                    font-size: 0.95em;
+                    background-color: $primary-color-light;
+                    color: white;
+                    padding: 0;
+                    font-weight: 500;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $primary-color;
+                        transition: 200ms;
+                    }
+                }
+
+                .price-image-container {
+                    display: flex;
+                    width: 75%;
+                    margin-bottom: 6.3em;
+                    gap: 2em;
+                    
+                    > label {
+                        display: block;
+                    }
+
+                    input {
+                        margin-bottom: 3em;
+                        width: 100%;
+                        height: 2em;
+                        border-radius: 0.5em;
+                        font-family: $main-font;
+                        padding: 0.8em;
+                        box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+                        border: solid 1.75px rgba(204, 204, 204, 0.25);
+                        font-size: 0.95em;
+                    }
+
+                    > input[type="file"] {
+                        display: none;
+                    }
+                }
+
+                .wrapper {
+                    position: relative;
+
+                    input {
+                        padding-left: 1.5em;
+                    }
+
+                    span {
+                        color: rgb(100, 100, 100);
+                        position: absolute;
+                        left: 0.75em;
+                        top: 0.26em;
+                        font-weight: 500;
+                    }
+                }
+
+                .wrapper-two {
+                    position: relative;
+
+                    input {
+                        padding-left: 2em;
+                    }
+
+                    span {
+                        color: rgb(100, 100, 100);
+                        position: absolute;
+                        left: 0.75em;
+                        top: 0.5em;
+                    }
+
+                    input {
+                        &:hover {
+                            cursor:pointer;
+                        }
+                    }
+                }
+
+                .images {
+                    display: flex;
+                    gap: 3em;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    > img {
+                        width: 8em;
+                    }
+                }
+
+                hr {
+                    margin-top: 0.5em;
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+}

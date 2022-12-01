@@ -1,0 +1,139 @@
+@import './../../variables';
+
+.Tags {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    > .Inputs {
+        display: flex;
+        gap: 0.625em;
+        flex-wrap: wrap;
+
+        > select {
+            border-radius: 0.5em;
+            border: none;
+            padding-inline: 1em;      
+            min-height: 2em;      
+
+            &:focus {
+                outline: 1.5px solid $primary-color-dark;
+            }
+        }
+
+        > input {
+            flex: 1;
+            border-radius: 0.5em;
+            border: none;
+            padding-inline: 1em;
+            min-height: 2em;
+
+            &:focus {
+                outline: 1.5px solid $primary-color-dark;
+            }
+        }
+    }
+
+    > .Social-media-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        list-style: none;
+
+        > .Social-media-button {                        
+            
+            padding: 0.1em 0.3em;
+            border-radius: 0.625em;
+            background-color: $secondary-color;
+            min-width: 6.25em;
+            max-width: max-content;
+            transition: 200ms;
+
+            > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.7em;
+
+                > a svg {
+                    font-size: 0.8125em;
+                    font-weight: $regular-400;
+                    color: #000;
+                }
+    
+                > a {
+                    text-decoration: none;
+                    color: #000;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.3em;
+                    
+                    > span {
+                        font-size: 0.8125em;
+                    }
+                }
+
+                > svg {
+                    cursor: pointer;
+                    transition: 200ms;
+    
+                    &:hover {
+                        transform: scale(1.15);                                        
+                    }
+                }
+            }
+            
+
+            
+    
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+    }
+
+    .btn {
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0.5em;
+        transition: 200ms;
+        font-family: $main-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: $primary-color-light;
+            flex: 1;
+            max-width: 3em;
+            text-transform: uppercase;
+            font-weight: $semiBold-600;
+
+            > svg {
+                fill: $secondary-color-light-alt;
+            }
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: $secondary-color;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+
+        &.btn-medium-font {
+            > svg {
+                font-size: 1.25em;
+            }                    
+        }
+    }
+}

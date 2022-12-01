@@ -1,0 +1,167 @@
+@import '../../variables';
+
+.Form {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+
+    > .inputs {
+        display: flex;
+        flex: 1;
+        max-width: 35em;
+        min-width: 15em;
+        width: 30%;
+        height: 100%;
+        background: $secondary-color;
+        color: #000000;
+        justify-content: center;
+        
+        > .form-fields {
+            display: flex;
+            height: 100%;
+            width: 60%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+
+            > .title {
+                font-size:  1.2rem;
+                font-weight: bold;
+                margin-bottom: 1.5rem;
+            }
+
+            input {
+                font-size: 0.75em;
+                cursor: text;
+            }
+
+            .select-menu {
+                color: #5f5f5f;
+                cursor: pointer;
+                width: 120px;
+                border-radius: 0.5rem;
+                border: none;
+                outline: none;
+                padding: 0.5rem 1.1rem ; 
+                margin-bottom: 0.5rem;
+                box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+                padding: 0.75em;
+                font-size: 13px;
+                margin-bottom: 1.5em;
+                font-family: $main-font;
+                font-weight: 600;
+                width: 100%;
+
+                option {
+                    color: black;
+                    background-color: $secondary-color-light-alt;
+                }
+            } 
+
+            .label {
+                width: 100%;
+                font-size: 0.8rem;
+                font-weight: 700;
+                padding-bottom: 0.5em;
+            }
+
+            .input, .submit-button {
+                width: 100%;
+                border-radius: 0.5rem;
+                border: none;
+                outline: none;
+                padding: 0.5rem 1.1rem ; 
+                margin-bottom: 0.5rem;
+                box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+                padding: 0.8em;
+                font-size: 13px;
+                margin-bottom: 1.5em;
+                font-family: $main-font;
+                font-weight: 600;
+            }
+
+            .buttons-container {
+                padding-top: 1em;
+                display: flex;
+                width: 100%;
+                gap: 1em;
+            }
+
+            .submit-button:hover {
+                background-color: $primary-color-dark;
+                transition: ease-in-out 300ms;
+                cursor: pointer;
+            }
+              
+            .submit-button:first-child {
+                background-color: $secondary-color-light;
+                color: $primary-color-light;
+                font-weight: 700;
+
+                &:hover {
+                    color: $primary-color-dark;
+                    transition: ease-in-out 300ms;
+                    cursor: pointer;
+                }
+            }
+            
+            .submit-button {
+                width: 100%;
+                background: $primary-color-light;
+                color: white;
+            }
+
+            .line {
+                width: 100%;
+                border: 1px solid #2B4D71;
+                margin-bottom: 1em;
+            }
+
+            .new-user-div {
+                width: 100%;
+                text-align: center;
+
+                > .Span {
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    padding-right: 0.8em;
+                }
+
+                > .linked-text {
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    text-decoration: underline;
+                    color: black;
+
+                    &:hover {
+                        color: $primary-color-light;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: $primary-color;
+        opacity: 0.9;
+        flex: 1;
+
+        > .contenedor {
+            width: 100%;
+            height: 100%;
+            
+            > .image {
+                width: 100%;
+                height: 100%;
+                filter: blur(10px);
+                object-fit: cover;
+            }
+        }
+    }
+}

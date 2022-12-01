@@ -1,0 +1,63 @@
+@import './../../../variables';
+
+.Activity {
+    flex: 1;
+    max-width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    > .Recent-Products {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625em;
+
+        > .Recent-Products-Container {
+            display: flex;
+            justify-content: center;
+
+            > .Recent-Products-Cards {                
+                padding: 0.625em 0.3125em;
+                display: flex;
+                gap: 1.5625em;
+                overflow: auto;
+                flex: 1;
+            }
+        }
+    }
+
+    > .Recent-Stores {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625em;
+
+        > .Recent-Stores-Container {            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10.625em;
+
+            > .Recent-Stores-Cards {                
+                padding: 0.625em;
+                display: flex;                
+                gap: 1.5625em;
+                overflow: auto;
+                
+                > a {
+                    min-width: 6.875em;
+                    min-height: 6.875em;
+                }
+            }            
+        }
+    }
+
+    .Recent-Title {
+        > .Line {
+            width: 100%;
+            height: 1.5px;
+            background-color: #000;
+            z-index: 1;
+        }
+    }
+}

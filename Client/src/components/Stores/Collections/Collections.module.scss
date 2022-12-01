@@ -1,0 +1,27 @@
+@import './../../../variables';
+
+.Collections {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+
+    > .Collection-title {        
+        > hr {
+            border: 1px solid #757575;
+        }
+    }
+
+    > .Collection-products {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 1.5625em;
+    }
+
+    @media (max-width: 600px) {
+        padding-inline: 0.625em;
+    }
+}

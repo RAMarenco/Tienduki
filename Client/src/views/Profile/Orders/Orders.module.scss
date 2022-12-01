@@ -1,0 +1,298 @@
+@import './../../../variables';
+
+.Orders {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    gap: 1.25em; 
+
+    .Orders-Title {
+        > .Line {
+            width: 100%;
+            height: 1.5px;
+            background-color: #000;
+            z-index: 1;
+        }
+    }
+
+    > .Orders-container {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        
+        
+        > .Table-container {
+            flex: 1;
+            width: 100%;
+            max-width: 47.25em;
+            max-height: 22em;
+            overflow: auto;
+    
+            > .Table {
+                border:0;
+                width: 100%;
+                margin:0;
+                padding:0;
+                border-collapse: collapse;
+                border-spacing: 0;
+                
+                > thead {
+                    height: 1.5625em;
+    
+                    > tr {
+                        > th {
+                            font-size: 0.75em;
+                        }
+                    }
+    
+                    border-bottom: 1px solid #000;
+                }
+    
+                > div {
+                    max-height: 25em;
+                }
+                > tbody {
+                    > tr {
+                        border-bottom: 1px solid #000;
+                        > td {
+                            text-align: center;
+                            font-size: 1em;
+                            padding-inline: 0.625em;
+    
+                            > a {
+                                > img {
+                                    padding: 0.625em;
+                                    object-fit: cover;
+                                    max-height: 6.25em;
+                                    max-width: 6.25em;
+                                    border-radius: 100%;
+                                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                                }
+                            }
+                            &[data-label="Tienda"] {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                
+                                > a {
+                                    max-width: 4.625em;
+                                    width: 4.625em;
+                                    max-height: 4.625em;
+                                    height: 4.625em;
+                                    flex: 1;
+                                    
+                                    > img {
+                                        object-fit: cover;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                            
+                            &[data-label="Productos"] {
+                                text-align: left;
+                                > div {
+                                    max-width: 30.625em;
+                                    padding-block: 0.3125em;                             
+                                    > p {
+                                        box-shadow: 0 1px 0px rgba(0,0,0,.3);
+                                    }
+                                    
+                                }
+                            }
+
+                            &.actions-buttons {                                
+                                > div {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    height: 100%;
+                                    flex-direction: row;
+                                    gap: 0.3125em;
+
+                                    > button, a {
+                                        min-width: 1.875em;
+                                        max-width: 1.875em;
+                                        min-height: 1.875em;
+                                    }
+                                }                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        > .pagination {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $secondary-color-light-alt;
+            width: min-content;
+            border-radius: 0.78125em;
+            overflow: hidden;
+    
+            > li {
+                min-width: 2em;
+                height: 1.5625em;
+                
+                &.active-page {
+                    color: $secondary-color-light-alt;
+                    background-color: $primary-color-light;
+                }
+                
+                &.action-button-container {
+                    background-color: $primary-color-light;
+                    color: $secondary-color-light-alt;
+    
+                    > .action-button-pagination {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        cursor: pointer;
+        
+                        &:hover {
+                            background-color: $primary-color-dark;
+                        }
+                    }
+                }
+    
+                > .page-num {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+    
+                    font-weight: $regular-400;
+    
+                    &:hover {
+                        color: $secondary-color-light-alt;
+                        background-color: $primary-color-dark;
+                    }
+                }
+            }
+        }
+    }
+
+    .darkgreyBack {
+        background-color: $secondary-color-dark;
+    }
+
+    .btn {
+        border: none;
+        border-radius: 0.5em;
+        transition: 200ms;
+        font-family: $main-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: $primary-color-light;
+            flex: 1;
+            text-transform: uppercase;
+            font-weight: $semiBold-600;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-success {
+            background-color: #008000;
+            flex: 1;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-error {
+            background-color: #F82A43;
+            flex: 1;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: $secondary-color;
+            color: #000;
+            font-weight: $semiBold-600;
+
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+
+        &.btn-medium-font {
+            > svg {
+                font-size: 1.25em;
+            }
+        }
+    }
+
+    @media (max-width: 1100px) {
+        > .Orders-container {
+            > .Table-container {
+                max-height: 30em;
+                > .Table {
+                    border: 1px solid transparent;
+                    box-shadow: none;
+                    thead {
+                        display: none;
+                    }
+                    tbody {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.25em;
+    
+                        tr {
+                            border: 2px solid #000;
+    
+                            > td:before {
+                                content: attr(data-label);
+                                float: left;
+                                font-size:10px;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                            }
+    
+                            > td {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 0.625em;
+                                text-align: right;
+                                font-size: 14px;
+                                box-shadow: 0 1px 1px rgba(0,0,0,.3);
+                                padding: 0.625em;
+    
+                                > div {
+                                    display: flex;
+                                    gap: 0.625em;
+                                    flex-direction: column;
+    
+                                    > p {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }	
+            }
+        }
+    }
+}

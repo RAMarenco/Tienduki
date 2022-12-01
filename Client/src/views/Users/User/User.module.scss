@@ -1,0 +1,218 @@
+@import './../../../variables';
+
+.User {
+    flex: 1;
+    padding: 1em 3.125em 3.125em 3.125em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    > .Users-options-main-header {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        width: 100%;
+        background-color: $secondary-color-light;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 3.75em;
+        padding-inline: 0.78125em;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        > h4 {
+            font-size: 1.25em;
+            font-weight: $semiBold-600;
+        }
+
+        > .Users-options-main-actions {
+            display: flex;
+            gap: 1.25em;
+
+
+            > .return {
+                position: absolute;
+                top:0;
+                right: 0;
+
+                height: 100%;
+                width: 3.75em;
+                background-color: $secondary-color-dark;
+                border: none;
+                cursor: pointer;
+                border-radius: 1.875em 0 0 1.875em;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                > svg {
+                    fill: $secondary-color-light-alt;
+                }
+            }
+        }
+    }
+
+    > .Card {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 6.875em 4.21875em;
+        gap: 2em;
+        background-color: $secondary-color-light;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        > .Card-input {
+            display: flex;            
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+
+            > .input {
+                flex: 1;
+                max-width: 18.75em;
+                min-width: 18.75em;
+                display: flex;
+                flex-direction: column;
+                gap: 0.625em;
+    
+                > h3 {
+                    font-size: 1em;                
+                }
+    
+                > input, select {
+                    padding-inline: 0.625em;
+                    width: 100%;
+                    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+                    min-height: 2.1875em;
+                    border: none;
+                    border-radius: 0.5em;                    
+
+                    &:focus {
+                        outline: 2px solid $primary-color;
+                    }
+                }
+
+                > input {
+                    &:read-only {
+                        color: gray;
+                    }
+                }
+
+                > select {
+                    &:disabled {
+                        color: gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        max-width: 18.75em;
+        border: none;
+        border-radius: 0.5em;
+        transition: 200ms;
+        font-family: $main-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: $primary-color-light;
+            flex: 1;
+            text-transform: uppercase;
+            font-weight: $semiBold-600;
+            color: $secondary-color-light-alt;
+
+            &:hover:not([disabled]) {
+                background-color: $primary-color;
+            }
+
+            &:disabled {
+                background-color: lighten($primary-color-light, 20%);
+                cursor: default;
+                &:hover {
+                    background-color: lighten($primary-color-light, 20%);
+                }
+            }
+        }
+
+        &.btn-success {
+            background-color: #008000;
+            flex: 1;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-error {
+            background-color: #F82A43;
+            flex: 1;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: $secondary-color;
+            color: #000;
+            font-weight: $semiBold-600;
+
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+
+        &.btn-medium-font {
+            > svg {
+                font-size: 1.25em;
+            }
+        }
+    }
+
+    .btn {
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0.5em;
+        transition: 200ms;
+        font-family: $main-font;
+        
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: $primary-color-light;
+            color: $secondary-color-light-alt;
+            flex: 1;
+            text-transform: uppercase;
+            font-weight: $semiBold-600;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: $secondary-color;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+
+        &.btn-medium-font {
+            > svg {
+                font-size: 1.25em;
+            }                    
+        }
+    }
+}

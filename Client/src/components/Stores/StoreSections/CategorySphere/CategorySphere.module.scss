@@ -1,0 +1,45 @@
+@import "./../../../../variables";
+
+.CategorySphere {
+    max-width: 11.25em;
+    max-height: 11.25em;    
+
+    width: 11.25em;
+    height: 11.25em;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 100%;
+
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
+    background-color: $secondary-color;
+    color: black;
+
+    transition: 500ms;
+
+    > h3 {
+        position: relative;
+        > span {
+            display: block;
+            text-align: center;
+            font-size: 1.25em;
+            
+            &:nth-child(2) {
+                display: initial;
+                position: absolute;
+                font-size: 3em;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -15px
+            }
+        }
+    }
+
+    &:hover {
+        transform: scale(1.115);
+    }
+}

@@ -1,0 +1,97 @@
+@import "./../../../variables";
+
+.ActionButton {
+    color: $secondary-color-light-alt;
+    text-decoration: none;    
+    width: 3.75em;
+    height: 3.75em;
+    border-radius: 0.5em;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: $primary-color-light;
+    transition: 500ms;
+
+    > .Icon {
+        font-size: 1.875em;
+        z-index: 1;
+    }
+
+    > .IconMessage {        
+        text-align: center;
+        font-size: 0.625em;
+        font-weight: $semiBold-600;
+    }
+
+    &.activeActionButton{
+        background-color: $primary-color;
+    }
+
+    &:hover:not(.activeActionButton) {
+        background-color: $primary-color-dark;
+    }
+
+    &.Profile {
+        border-radius: 3.75em;
+        position: relative;
+        overflow: hidden;
+        gap: 0.4em;
+
+        > .IconMessage {
+            font-size: 0.75em;
+            transition: 500ms;
+            z-index: 1;
+        }
+
+        > .Profile-decoration {            
+            height: 3.75em;
+            width: 3.75em;
+            border-radius: 3.75em;
+            position: absolute;
+            bottom: -60%;
+            transition: 500ms;            
+        }
+
+        &.activeActionButton{
+            cursor: default;
+            background-color:  $primary-color;
+
+            > .IconMessage {
+                color: #000;
+            }
+
+            > .Profile-decoration {            
+                background: $secondary-color; 
+                color: #000;                  
+            }
+        }
+
+        &:hover {
+            > .Icon {                
+                z-index: 1;
+            }
+
+            > .IconMessage {
+                color: #000;
+            }
+
+            > .Profile-decoration {
+                background: $secondary-color;                
+                color: #000;
+            }
+        }
+    }
+
+    &.OnlyPhone {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .ActionButton {
+        &.OnlyPhone {
+            display: flex;
+        }
+    }
+}

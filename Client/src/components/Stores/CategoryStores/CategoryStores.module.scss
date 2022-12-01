@@ -1,0 +1,12 @@
+@import "./../../../variables";
+
+.CategoryStores {
+    flex: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25em;
+
+    justify-content: center;
+    align-items: flex-start;
+}

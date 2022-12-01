@@ -1,0 +1,46 @@
+@import './../../../variables';
+
+.WishList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625em;
+    overflow: hidden;
+
+    .WishList-Title {
+        > .Line {
+            width: 100%;
+            height: 1.5px;
+            background-color: #000;
+            z-index: 1;
+        }
+    }
+
+    > .WishList-Products {
+        display: flex;
+        max-height: 30.53125em;
+        flex-wrap: wrap;
+        overflow: auto;
+        padding: 0.625em;
+        gap: 1.5625em;
+        justify-content: center;
+
+        &::-webkit-scrollbar {
+            width: 10px;  
+        }
+        
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: $secondary-color-light; 
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $primary-color;
+        }
+        
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: $primary-color-dark;
+        }
+    }
+}

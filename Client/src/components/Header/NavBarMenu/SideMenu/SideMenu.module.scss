@@ -1,0 +1,35 @@
+@import "./../../../../variables";
+
+.SideMenu {    
+    width: 18.75em;
+    position: fixed;
+    background-color: rgb( 0 0 0 / 0);
+    pointer-events: all;
+    z-index: 1000;
+    transition: linear 500ms;
+    transform: translateX(-100%);
+    min-height: calc(100vh - 4.375em);
+    top: 4.375em;
+
+    > .SideMenu-Container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.625em;
+        gap: 1.25em;
+        background-color: $secondary-color-light;        
+        min-height: 100%;
+        position: absolute;
+
+        > .SideMenu-Actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &.SideMenu-active {
+        transform: translateX(0%);
+    }
+}

@@ -1,0 +1,58 @@
+@import "./../../variables";
+
+.Footer {
+    min-height: 15em;
+    background-color: $primary-color-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.1875em;        
+    color: $secondary-color-light-alt;
+
+    > .Footer-Info {   
+        flex: 1;
+        display: flex;
+        gap: 3em;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+
+        > .Footer-Lists {            
+            min-width: max-content;
+            text-align: center;
+
+            > h3 {
+                font-size: 1.125em;
+                font-weight: $bold-700;
+            }
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                
+                gap: 0.9375em;
+                padding-block: 0.9375em;                
+                > a {
+                    font-size: 0.875em;
+                }
+            }
+            
+        }
+    }
+
+    > .Footer-CopyRight {
+        font-size: 0.6875em;
+    }
+    
+    @media (max-width: 600px) {
+        > .Footer-Info {               
+            gap: 0.5em;            
+
+            > .Footer-Lists {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
+

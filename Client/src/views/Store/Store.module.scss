@@ -1,0 +1,378 @@
+@import './../../variables';
+
+.Store {
+    flex: 1;
+    display: flex;
+    padding: 1em 7.1875em;
+    flex-direction: column;
+    gap: 0.625em;
+
+    > .Store-Header {
+        flex: 1;
+        max-height: 5.9375em;
+        min-height: 5.9375em;
+        display: flex;
+        position: relative;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
+        > .Store-Logo {
+            width: 5.9375em;
+            max-height: 100%;
+            background-color: $primary-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        > .Store-Banner {
+            flex: 1;
+            background-color: $secondary-color;
+            position: relative;
+
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+
+            > h3 {
+                font-size: 1.5625em;
+                z-index: 1;
+                padding-inline: 0.625em;
+            }
+
+            > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                opacity: 0.25;
+            }
+        }
+        
+        > input[type="file"] {
+            display: none;
+        }
+
+        > button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            min-height: 1.5em;
+            min-width: 1.5em;
+            padding: 0.3125em;
+            border-radius: 0.3125em;
+            border: none;
+            color: $secondary-color-light-alt;            
+            background-color: $primary-color-light;
+            cursor: pointer;
+            transition: 200ms;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    > .Store-Products-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.625em;
+        
+        > .Product-options-main-header {
+            width: 100%;
+            background-color: $secondary-color-light;
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 3.75em;
+            padding-inline: 0.78125em;
+            justify-content: space-between;
+            align-items: center;
+
+            > h4 {
+                font-size: 1.25em;
+                font-weight: $semiBold-600;
+            }
+
+            > .Product-options-main-actions {
+                display: flex;
+                gap: 1.25em;
+                
+                > select {
+                    min-height: 2.1875em;
+                    min-width: 3.75em;
+                    border: none;
+                    background-color: $secondary-color-light-alt;
+                    border-radius: 0.5em;
+                }   
+                
+                > button {
+                    width: 10.625em;
+                }
+            }
+        }
+
+        > .Table-container {
+            flex: 1;
+            width: 100%;
+            overflow: auto;
+    
+            > .Table {
+                border:0;
+                width: 100%;
+                margin:0;
+                padding:0;
+                border-collapse: collapse;
+                border-spacing: 0;
+                
+                > thead {
+                    height: 1.5625em;
+    
+                    > tr {
+                        > th {
+                            font-size: 0.75em;
+                        }
+                    }
+    
+                    border-bottom: 1px solid #000;
+                }
+    
+                > div {
+                    max-height: 25em;
+                }
+                > tbody {
+                    > tr {
+                        border-bottom: 1px solid #000;
+                        > td {
+                            vertical-align: middle;
+                            text-align: center;
+                            font-size: 1em;
+    
+                            > img {
+                                padding: 0.625em;
+                                object-fit: cover;
+                                max-height: 6.25em;
+                                max-width: 6.25em;
+                            }
+                            
+                            &:nth-child(2) {
+                                text-align: left;
+                                > div {
+                                    max-width: 66.25em;
+                                    > p {
+                                        line-break: auto;
+                                    }
+                                    
+                                }
+                            }
+
+                            &.actions-buttons {
+                                > div {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    height: 100%;
+                                    flex-direction: row;
+                                    gap: 0.625em;
+
+                                    > button, a {
+                                        min-width: 1.875em;
+                                        max-width: 1.875em;
+                                        min-height: 1.875em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        > .pagination {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $secondary-color-light-alt;
+            width: min-content;
+            border-radius: 0.78125em;
+            overflow: hidden;
+    
+            > li {
+                min-width: 2em;
+                height: 1.5625em;
+                
+                &.active-page {
+                    color: $secondary-color-light-alt;
+                    background-color: $primary-color-light;
+                }
+                
+                &.action-button-container {
+                    background-color: $primary-color-light;
+                    color: $secondary-color-light-alt;
+    
+                    > .action-button-pagination {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        cursor: pointer;
+        
+                        &:hover {
+                            background-color: $primary-color-dark;
+                        }
+                    }
+                }
+    
+                > .page-num {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+    
+                    font-weight: $regular-400;
+    
+                    &:hover {
+                        color: $secondary-color-light-alt;
+                        background-color: $primary-color-dark;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        border: none;
+        border-radius: 0.5em;
+        transition: 200ms;
+        font-family: $main-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: $primary-color-light;
+            flex: 1;
+            text-transform: uppercase;
+            font-weight: $semiBold-600;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-primary-alt {
+            color: white;
+            background-color: $secondary-color-dark;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 1px 100px;
+            white-space: nowrap;
+
+            &:hover {
+                background-color: grey;
+            }
+        }
+
+        &.btn-success {
+            background-color: #008000;
+            flex: 1;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-error {
+            background-color: #F82A43;
+            flex: 1;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: $secondary-color;
+            color: #000;
+            font-weight: $semiBold-600;
+
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+
+        &.btn-medium-font {
+            > svg {
+                font-size: 1.25em;
+            }
+        }
+    }
+
+    @media (max-width: 1100px) {
+        > .Store-Products-container {
+            > .Table-container {
+                > .Table{
+                    border: 1px solid transparent;
+                    box-shadow: none;
+                    thead{
+                        display: none;
+                    }
+                    tbody{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.25em;
+    
+                        tr{
+                            border: 2px solid #000;
+    
+                            > td:before {
+                                content: attr(data-label);
+                                float: left;
+                                font-size:10px;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                            }
+    
+                            > td {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 0.625em;
+                                text-align: right;
+                                font-size: 14px;
+                                box-shadow: 0 1px 1px rgba(0,0,0,.3);
+                                padding: 0.625em;
+    
+                                > div {
+                                    display: flex;
+                                    gap: 0.625em;
+                                    flex-direction: column;
+    
+                                    > p {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }	
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding-inline: 0;
+    }
+
+    @media ( 600px <= width <= 1100px) {
+        padding-inline: 3.125em;
+    }
+}

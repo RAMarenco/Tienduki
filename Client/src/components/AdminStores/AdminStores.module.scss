@@ -1,0 +1,303 @@
+@import './../../variables';
+
+.AdminStores {
+    flex: 1;
+    padding: 1em 3.125em 3.125em 3.125em;
+    
+    > .Admin-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.625em;
+        height: 100%;
+        
+        > .Admin-options-main-header {
+            width: 100%;
+            background-color: $secondary-color-light;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 3.75em;
+            padding-inline: 0.78125em;
+            justify-content: space-between;
+            align-items: center;
+
+            > h4 {
+                font-size: 1.25em;
+                font-weight: $semiBold-600;
+            }
+
+            > .Admin-options-main-actions {
+                display: flex;
+                gap: 1.25em;
+                
+                > select {
+                    min-height: 2.1875em;
+                    min-width: 3.75em;
+                    border: none;
+                    background-color: $secondary-color-light-alt;
+                    border-radius: 0.5em;
+                }   
+                
+                > button {
+                    width: 10.625em;
+                }
+            }
+        }
+
+        > .Table-container {
+            flex: 1;
+            width: 100%;
+            
+            overflow: auto;
+    
+            > .Table {
+                border:0;
+                width: 100%;
+                margin:0;
+                padding:0;
+                border-collapse: collapse;
+                border-spacing: 0;
+                
+                > thead {
+                    height: 1.5625em;
+    
+                    > tr {
+                        > th {
+                            font-size: 0.75em;
+                        }
+                    }
+    
+                    border-bottom: 1px solid #000;
+                }
+    
+                > div {
+                    max-height: 25em;
+                }
+                > tbody {
+                    > tr {
+                        border-bottom: 1px solid #000;
+                        > td {
+                            text-align: center;
+                            vertical-align: middle;                            
+                            font-size: 1em;
+                            height: 3.59375em;
+    
+                            > img {
+                                padding: 0.625em;
+                                object-fit: cover;
+                                max-height: 6.25em;
+                                max-width: 6.25em;
+                            }
+                            
+                            &:nth-child(1) {
+                                min-width: 10em;                                
+                            }
+
+                            &.actions-buttons {
+                                padding-inline: 0.625em;
+                                > div {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    height: 100%;
+                                    flex-direction: row;
+                                    gap: 0.625em;
+
+                                    > button, a {
+                                        min-width: 1.875em;
+                                        max-width: 1.875em;
+                                        min-height: 1.875em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        > .pagination {
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $secondary-color-light;            
+            overflow: hidden;
+            min-height: 2.5em;
+    
+            > li {
+                min-width: 2em;
+                height: 1.5625em;
+
+                &:first-child {
+                    border-radius: 0.78125em 0 0 0.78125em;
+                }
+
+                &:last-child {
+                    border-radius: 0 0.78125em 0.78125em 0;
+                }
+                
+                &.active-page {
+                    color: $secondary-color-light-alt;
+                    background-color: $primary-color-light;
+                }
+                
+                &.action-button-container {
+                    background-color: $primary-color-light;
+                    color: $secondary-color-light-alt;
+    
+                    > .action-button-pagination {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        cursor: pointer;
+        
+                        &:hover {
+                            background-color: $primary-color-dark;
+                        }
+                    }
+                }
+    
+                > .page-num {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+    
+                    font-weight: $regular-400;
+    
+                    &:hover {
+                        color: $secondary-color-light-alt;
+                        background-color: $primary-color-dark;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        border: none;
+        border-radius: 0.5em;
+        transition: 200ms;
+        font-family: $main-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: $primary-color-light;
+            flex: 1;
+            text-transform: uppercase;
+            font-weight: $semiBold-600;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-success {
+            background-color: #008000;
+            flex: 1;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-error {
+            background-color: #F82A43;
+            flex: 1;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: $secondary-color;
+            color: #000;
+            font-weight: $semiBold-600;
+
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+
+        &.btn-medium-font {
+            > svg {
+                font-size: 1.25em;
+            }
+        }
+    }
+
+    @media (max-width: 1100px) {
+        > .Admin-container {
+            > .Table-container {
+                > .Table{
+                    border: 1px solid transparent;
+                    box-shadow: none;
+                    thead{
+                        display: none;
+                    }
+                    tbody{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.25em;
+    
+                        tr{
+                            border: 2px solid #000;
+    
+                            > td:before {
+                                content: attr(data-label);
+                                float: left;
+                                font-size:10px;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                            }
+    
+                            > td {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 0.625em;
+                                text-align: right;
+                                font-size: 14px;
+                                box-shadow: 0 1px 1px rgba(0,0,0,.3);
+                                padding: 0.625em;
+    
+                                > div {
+                                    display: flex;
+                                    gap: 0.625em;
+                                    flex-direction: column;
+    
+                                    > p {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }	
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding-inline: 0;
+    }
+
+    @media ( 600px <= width <= 1100px) {
+        padding-inline: 3.125em;
+    }
+}

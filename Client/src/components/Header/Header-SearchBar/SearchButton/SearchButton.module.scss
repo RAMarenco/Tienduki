@@ -1,0 +1,20 @@
+@import "./../../../../variables";
+
+.SearchButton {
+    width: 2.25em;
+    border: none;
+    border-radius: 0 0.5em 0.5em 0;
+    background-color: $primary-color-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .SearchButtonIcon {
+        font-size: 1.3125em;
+        color: $secondary-color-light-alt;        
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

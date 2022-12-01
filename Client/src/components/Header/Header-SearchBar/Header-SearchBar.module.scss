@@ -1,0 +1,11 @@
+@import "./../../../variables";
+
+.Header_SearchBar {
+    height: 2.25em;
+    width: 31.25em;    
+    display: flex;    
+
+    @media (max-width: 1100px) {
+        display: none;
+    }
+}

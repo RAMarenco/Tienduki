@@ -1,0 +1,37 @@
+@import "./variables";
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;  
+
+  main {
+    flex: 1;
+    display: flex;
+    
+  }
+}
+
+* {
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $secondary-color-light; 
+  }
+  
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $primary-color;
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $primary-color-dark;
+  }
+}

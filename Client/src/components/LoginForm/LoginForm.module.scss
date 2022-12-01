@@ -1,0 +1,162 @@
+@import '../../variables';
+
+.Form {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+
+    > .inputs {
+        display: flex;
+        flex: 1;
+        max-width: 35em;
+        min-width: 15em;
+        width: 30%;
+        height: 100%;
+        background: $secondary-color;
+        color: #000000;
+        justify-content: center;
+
+        > .form-fields {
+            display: flex;
+            height: 100%;
+            width: 60%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+
+            > .title {
+                font-size:  1.2rem;
+                font-weight: bold;
+                margin-bottom: 3rem;
+            }
+
+            .label {
+                width: 100%;
+                font-size: 0.8rem;
+                font-weight: 700;
+                padding-bottom: 0.5em;
+            }
+
+            .input, .submit-button {
+                width: 100%;
+                border-radius: 0.5rem;
+                border: none;
+                outline: none;
+                padding: 0.5rem 1.1rem ; 
+                margin-bottom: 0.5rem;
+                box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.25);
+                padding: 0.8em;
+                font-size: 13px;
+                margin-bottom: 1.5em;
+                font-family: $main-font;
+                font-weight: 600;
+            }
+
+            
+            .submit-button:hover {
+                background-color: $primary-color-dark;
+                transition: ease-in-out 300ms;
+                cursor: pointer;
+            }
+              
+            .forgot-pass {
+                width: 100%;
+                margin-bottom: 1.5rem;
+
+                > .Span{
+                    font-size: 0.8rem;
+                    float: right;
+                    font-weight: bold;
+                    text-decoration: underline;
+                    padding-bottom: 0.8em;
+                    color: black;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $primary-color-light;
+                    }
+                }
+            }
+              
+            .submit-button {
+                background: $primary-color-light;
+                color: white;
+            }
+
+            .line {
+                width: 100%;
+                border: 1px solid $primary-color;
+                margin-bottom: 1em;
+            }
+
+            .new-user-div {
+                width: 100%;
+                text-align: center;
+
+                > .Span {
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    padding-right: 0.8em;
+                }
+
+                > .linked-text {
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    text-decoration: underline;
+                    color: black;
+
+                    &:hover {
+                        color: $primary-color-light;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: $primary-color;
+        flex: 1;
+        position: relative;
+
+        > .logo-container {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            > .logo-image {                
+                height:20em;
+                width:20em;                
+            }
+        }
+
+        > .contenedor {
+            width: 100%;
+            height: 100%;
+            
+            > .image {
+                width: 100%;
+                height: 100%;
+                filter: blur(10px);
+                object-fit: cover;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .inputs {
+            flex: 1;
+            max-width: 100%;
+        }
+
+        .logo {
+            display: none;
+        }
+    }
+}

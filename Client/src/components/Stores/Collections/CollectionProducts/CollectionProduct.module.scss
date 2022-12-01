@@ -1,0 +1,121 @@
+@import './../../../../variables';
+
+.CollectionProduct-container {
+    position: relative;
+    height: 13em;
+
+    > .Add-to-favorite {
+        width: 1.25em;
+        height: 1.25em;
+        position: absolute;
+        background-color: $secondary-color-light-alt;
+        z-index: 1;
+        right: 0;
+        transform: translate(0.625em, -0.625em);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+        > svg {
+            fill: $primary-color;
+
+            &.favorite {
+                fill: #e58e26;
+            }
+        }
+    }
+    
+    > .CollectionProduct {
+        min-width: 10em;
+        height: 13em;
+        background-color: $secondary-color-light;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 0.625em;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        max-width: 8.75em;
+        text-decoration: none;
+    
+        > .Product-image {
+            flex: 1;
+            max-height: 8em;
+            min-height: 8em;
+            position: relative;
+            overflow: hidden;
+    
+            > img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                transition: 200ms;
+            }
+    
+            > .Empty {
+                height: 100%;
+                background-color: $secondary-color;
+            }
+    
+            > .Store-Name {
+                position: absolute;
+                bottom: 0;
+                min-height: 0.9375em;
+                min-width: 3em;
+                background-color: rgb(0 0 0 / 0.30);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                padding: 0.25em 0.4375em;
+    
+                > h5 {
+                    color: $secondary-color-light-alt;
+                    font-size: 0.5em;
+                }
+            }
+        }
+    
+        > .Product-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3125em;
+            padding: 0.625em;
+            
+            align-items: center;
+            justify-content: space-between;
+    
+            > .Product-name {
+                color: #000;
+                font-size: 0.7em;
+                text-align: center;                
+            }
+    
+            > .Product-price {
+                
+                min-height: 1em;
+                
+                padding: 0.25em 0.8125em;
+                background-color: $secondary-color-dark;
+                border-radius: 0.3125em;
+                            
+                color: $secondary-color-light-alt;
+                > p {
+                    font-size: 0.6em;
+                    font-weight: $bold-700;
+                }
+            }
+        }
+    
+        &:hover {
+            > .Product-image {
+                > img {
+                    transform: scale(1.115);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,182 @@
+@import './../../variables';
+
+.Cart {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8125em;
+
+    > .Header {
+        width: 100%;
+        max-width: 43.75em;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        > .Title {
+            h2 {
+                text-align: center;
+                font-size: 1.5em;
+            }
+            position: relative;
+            z-index: 2;
+            background-color: $secondary-color-light-alt;
+            width: min-content;
+            height: min-content;
+            padding: 0.5em 2em;            
+        }
+
+        > .Line {
+            width: 100%;
+            max-width: 43.75em;
+            height: 1.5px;
+            background-color: #000;
+            transform: translateY(1.4375em);
+            position: absolute;
+            z-index: 1;
+        }
+    }
+
+    > .Cart-Card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 33.125em;
+        border-radius: 0.5em;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);        
+        width: 100%;
+        max-width: 56.25em;
+        background-color: $secondary-color-light;
+        padding: 2.25em 3em;
+        gap: 0.625em;
+
+        > .Store {
+            display: flex;
+            flex-direction: column;            
+            gap: 0.625em;
+
+            > .Store-Cart-Details {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 0.625em;
+
+                > .Store-Products {
+                    display: flex;
+                    flex-direction: column;                    
+
+                    .Store-Product {
+                        display: flex;
+                        gap: 0.625em;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        > .Product-Quantity {
+                            width: 5em;
+                            display: flex;
+                            gap: 0.625em;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            > button {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                border-radius: 100%;
+                                color: $secondary-color-light-alt;
+                                min-width: 1.03125em;
+                                height: 1.03125em;                                
+                                background-color: darken($secondary-color, 50%);
+                                border: none;
+                                cursor: pointer;
+                            }
+
+                            > span {
+                                flex: 1;
+                                display: flex;
+                                justify-content: center;
+                            }
+                        }
+
+                        > .removeFromCart {
+                            background-color: darken($secondary-color, 50%);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: $secondary-color-light-alt;
+                            min-width: 1.03125em;
+                            height: 1.03125em;
+                            border-radius: 100%;
+                            cursor: pointer;
+                            border: none;
+                            
+                            > svg {
+                                transform: scale(0.7);
+                            }
+                        }
+                    }
+                }
+
+                > .Store-extras {
+                    display: flex;
+                    flex-direction: column;
+
+                    > span {
+                        display: flex;
+                        gap: 0.3115em;
+                    }
+                }
+            }
+            
+            > hr {
+                border: none;
+                height: 2px;
+                background-color: #000;
+            }
+        }
+    }
+
+    .btn {
+        padding: 0.25em 0.7em;
+        border: none;
+        border-radius: 0.5em;
+        transition: 200ms;
+        font-family: $main-font;
+        
+        cursor: pointer;
+
+        &.btn-primary {
+            background-color: $primary-color-light;
+            color: $secondary-color-light-alt;
+            flex: 1;
+            text-transform: uppercase;
+            font-weight: $semiBold-600;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: $secondary-color;
+            color: $secondary-color-light-alt;
+
+            &:hover {
+                background-color: $secondary-color-dark;
+            }
+        }
+
+        &.btn-medium-font {
+            > svg {
+                font-size: 1.25em;
+            }                    
+        }
+    }
+
+    @media (max-width: 600px) {
+        .Cart-Card {
+            padding: 2.25em 1em;
+        }
+    }
+}
