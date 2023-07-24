@@ -11,7 +11,7 @@ const CollectionProduct = ( {id, Name = "", Price = "", Image = "", Store = "", 
     const [favorite, setFavorite] = useState(isfavorite);    
 
     const handleClick = () => {
-        fetch(`https://tienduki-production.up.railway.app/api/clientWishList/`, {
+        fetch(`https://apit.mingo.studio/api/clientWishList/`, {
             method: favorite ? "DELETE":"POST",
             headers: {
                 'Content-Type': 'application/json',

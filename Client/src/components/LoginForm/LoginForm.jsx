@@ -35,7 +35,7 @@ const Login = () => {
       e.preventDefault();
   
     const { identifier, password } = state;
-    fetch("https://tienduki-production.up.railway.app/api/auth/signin/", {
+    fetch("https://apit.mingo.studio/api/auth/signin/", {
       method:"POST",
       crossDomain:true,
       headers:{

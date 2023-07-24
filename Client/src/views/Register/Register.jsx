@@ -51,7 +51,7 @@ const Register = () => {
         e.preventDefault(); 
         const { username, name, lastname, email, datebirth, gender, password, confirmPassword} = state;
 
-        fetch("https://tienduki-production.up.railway.app/api/auth/signup/client", {
+        fetch("https://apit.mingo.studio/api/auth/signup/client", {
             method:"POST",
             crossDomain:true,
             headers: {
@@ -78,7 +78,7 @@ const Register = () => {
         e.preventDefault(); 
         const { username, email, category, password } = store;
 
-        fetch("https://tienduki-production.up.railway.app/api/auth/signup/ventor", {
+        fetch("https://apit.mingo.studio/api/auth/signup/ventor", {
             method:"POST",
             crossDomain:true,
             headers: {

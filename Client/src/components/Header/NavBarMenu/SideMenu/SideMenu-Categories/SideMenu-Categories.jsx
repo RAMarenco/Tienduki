@@ -9,7 +9,7 @@ const SideMenu_Categories = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("https://tienduki-production.up.railway.app/api/storeCategory/").then(
+        fetch("https://apit.mingo.studio/api/storeCategory/").then(
             response => response.json().then(data => {
                 setData(data);                
             })

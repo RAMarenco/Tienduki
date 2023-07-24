@@ -21,7 +21,7 @@ const Profile = () => {
     const location = useLocation();  
 
     const GetProfile = () => {        
-        fetch(`https://tienduki-production.up.railway.app/api/user/${useAuth().user._id}`)
+        fetch(`https://apit.mingo.studio/api/user/${useAuth().user._id}`)
         .then(
             response => {
                 if (response.ok) {

@@ -60,7 +60,7 @@ const StoreProduct = () => {
         );
         const imagenSubida = await response.json(); 
 
-        fetch("https://tienduki-production.up.railway.app/api/productImage/", {
+        fetch("https://apit.mingo.studio/api/productImage/", {
             method: "POST",
             crossDomain: true,
             headers: {
@@ -97,7 +97,7 @@ const StoreProduct = () => {
     // Adding a product
     const addProduct = () => {
         if (storeProductInfo._id_product_collection !== "") {
-            fetch(`https://tienduki-production.up.railway.app/api/storeProduct/${id ? id : ""}`, {
+            fetch(`https://apit.mingo.studio/api/storeProduct/${id ? id : ""}`, {
                 method: id ? 'PUT' : 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ const StoreProduct = () => {
     // Editing a product
     const getProduct = () => {
         setIsLoading(true);
-        fetch(`https://tienduki-production.up.railway.app/api/storeProduct/id/${id}`)
+        fetch(`https://apit.mingo.studio/api/storeProduct/id/${id}`)
         .then (
             response => {
                 if (response.ok) {
@@ -152,7 +152,7 @@ const StoreProduct = () => {
     // get all collections from user (vendor)
     const getCollections = () => {
         setLoading(true);
-        fetch(`https://tienduki-production.up.railway.app/api/productCollection/${useAuth().user._id}`)
+        fetch(`https://apit.mingo.studio/api/productCollection/${useAuth().user._id}`)
         .then (
             response => {
                 if (response.ok) {

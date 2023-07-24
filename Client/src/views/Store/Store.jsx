@@ -34,7 +34,7 @@ const StoreV = () => {
 
     const GetProducts = () => {
         setDone(false);
-        fetch(`https://tienduki-production.up.railway.app/api/storeProduct/store/${useAuth().user._id}`).then(
+        fetch(`https://apit.mingo.studio/api/storeProduct/store/${useAuth().user._id}`).then(
             response => response.json().then(data => {
                 setProducts(data);
                 setDone(true);
@@ -44,7 +44,7 @@ const StoreV = () => {
 
     const GetUser = () => {
         setIsLoading(true);
-        fetch(`https://tienduki-production.up.railway.app/api/user/${useAuth().user._id}`).then(
+        fetch(`https://apit.mingo.studio/api/user/${useAuth().user._id}`).then(
             response => response.json().then(data => {
                 setUserData(data);
                 setIsLoading(false)
@@ -126,7 +126,7 @@ const StoreV = () => {
         const imagenSubida = await response.json();
         
         if (image !== "") {
-            fetch(`https://tienduki-production.up.railway.app/api/image/${imageId}`, {
+            fetch(`https://apit.mingo.studio/api/image/${imageId}`, {
                 method: "PUT",
                 crossDomain: true,
                 headers: {
@@ -139,7 +139,7 @@ const StoreV = () => {
                 }),
             })
         }else {
-            fetch("https://tienduki-production.up.railway.app/api/image/", {
+            fetch("https://apit.mingo.studio/api/image/", {
             method: "POST",
             crossDomain: true,
             headers: {
@@ -157,7 +157,7 @@ const StoreV = () => {
     };
 
     const handleHideProduct = (id, visible) => (e) => {
-        fetch(`https://tienduki-production.up.railway.app/api/storeProduct/${id}`, {
+        fetch(`https://apit.mingo.studio/api/storeProduct/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -182,7 +182,7 @@ const StoreV = () => {
     }
 
     const handleDeleteProduct = (id) => (e) => {
-        fetch(`https://tienduki-production.up.railway.app/api/storeProduct/${id}`, {
+        fetch(`https://apit.mingo.studio/api/storeProduct/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -228,7 +228,7 @@ const StoreV = () => {
             }
         })
 
-        fetch("https://tienduki-production.up.railway.app/api/productCollection/", {
+        fetch("https://apit.mingo.studio/api/productCollection/", {
         method:"POST",
         crossDomain:true,
         headers: {

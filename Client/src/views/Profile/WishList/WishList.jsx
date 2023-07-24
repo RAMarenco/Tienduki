@@ -17,7 +17,7 @@ const WishList = () => {
 
     const getWishList = () => {
         setIsLoading(true)
-        fetch(`https://tienduki-production.up.railway.app/api/clientWishList/All/${useAuth().user._id}`).then(
+        fetch(`https://apit.mingo.studio/api/clientWishList/All/${useAuth().user._id}`).then(
             response => response.json().then(data => {
                 setWishList(data);
                 setIsLoading(false);

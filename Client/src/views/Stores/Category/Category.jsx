@@ -18,7 +18,7 @@ const Category = () => {
 
     const GetProductsCategory = () => {
         setIsLoading(true);
-        fetch(`https://tienduki-production.up.railway.app/api/storeCategory/storeCategory/${Category}`)
+        fetch(`https://apit.mingo.studio/api/storeCategory/storeCategory/${Category}`)
         .then(
             response => response.json().then(data => {
                 setStores(data);
