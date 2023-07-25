@@ -2,12 +2,27 @@ import { ToastContainer, toast } from 'react-toastify';
 import classes from './StoreRegisterForm.module.scss';
 import image from '../../assets/stock_image.jpeg';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import validator from "validator"; //yarn add react-bootstrap bootstrap validator
 
 const StoreRegisterForm = (props) => {
     const { store, handleStoreChange, handleChangeVendor, handleInputChangeVendor } = props;
     const history = useNavigate();
-    
+    const [categories, setCategories] = useState([]);
+
+    const getCategories = () => {
+        fetch("https://apit.mingo.studio/api/storeCategory/")
+        .then(
+            response => response.json().then(data => {
+                setCategories(data);                                
+            })
+        )
+    }
+
+    useEffect(() => {
+        getCategories()
+    }, [])
+
     return (
         <main>
             <ToastContainer/>
@@ -46,8 +61,14 @@ const StoreRegisterForm = (props) => {
                             onChange={handleInputChangeVendor}
                             required>
                                 <option value=""></option>
-                                <option value="Bisuteria">Bisutería</option>    //! Valores quemados
-                                <option value="Artesania">Artesanía</option>
+                                {categories.length > 0 && 
+                                    categories.map((cat) => {
+                                        return (        
+                                            <option value={cat.category}>{cat.category}</option>
+                                        )
+                                    })
+                                }
+                                
                             </select>
 
                         <label className={classes["label"]}>Contraseña</label>
