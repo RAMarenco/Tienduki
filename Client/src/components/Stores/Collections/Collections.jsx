@@ -28,19 +28,19 @@ const Collections = ({id="", Store=""}) => {
     const getFavorites = () => {
         fetch(`https://apit.mingo.studio/api/clientWishList/All/${useAuth().user._id}/`).then(
             response => response.json().then(data => {
-                setFavorites(data);                
+                setFavorites(data);
             })
-        )        
+        )
     }
 
     useEffect(() => {
         getCollections();
         if (useAuth().role === "Client") {
             getFavorites();
-        }        
-    }, []);    
+        }
+    }, []);
 
-    if(!isloading) {        
+    if(!isloading) {
         const collectionsMap = collections.map((collection) => {
             return (
                 <div key={collection._id} className={ classes["Collections"] }>
@@ -52,15 +52,16 @@ const Collections = ({id="", Store=""}) => {
                     </div>
                     <div className={ classes["Collection-products"] }>
                         { 
-                            collection.product_collections.map(products => {    
+                            collection.product_collections.map(products => {
+                                
                                 let favoriteProduct = false
-                                favorites.map(favorite => {                                    
-                                    if (products._id === favorite.id_product) {
+                                favorites.map(favorite => {
+                                    if (products._id == favorite.id_product._id) {
                                         favoriteProduct = true;
-                                    }                                    
+                                    }
                                 })
                                 return (
-                                    <CollectionProduct key={products._id} isfavorite={favoriteProduct} id={products._id} Store={Store} Name={products.name} Image={products.image_product[0]?.imageUrl} Price={products.price.$numberDecimal}/>
+                                    <CollectionProduct key={products._id} isfavorite={favoriteProduct} removeFromWishList={() => {return;}} id={products._id} Store={Store} Name={products.name} Image={products.image_product[0]?.imageUrl} Price={products.price.$numberDecimal}/>
                                 )
                             }) 
                         }

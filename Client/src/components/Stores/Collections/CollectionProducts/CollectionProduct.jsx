@@ -2,13 +2,13 @@ import classes from './CollectionProduct.module.scss';
 
 import { Link } from 'react-router-dom';
 import { RiStarSFill } from 'react-icons/ri';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../../../core/AuthRoleUser';
 
 const CollectionProduct = ( {id, Name = "", Price = "", Image = "", Store = "", isfavorite = false, removeFromWishList, HideWishList = false, storeid = "", storeName = ""} ) => {
 
-    const [favorite, setFavorite] = useState(isfavorite);    
+    const [favorite, setFavorite] = useState(false);
 
     const handleClick = () => {
         fetch(`https://apit.mingo.studio/api/clientWishList/`, {
@@ -36,6 +36,10 @@ const CollectionProduct = ( {id, Name = "", Price = "", Image = "", Store = "", 
         toast.success("Añadido a favoritos.");
     }
 
+    useEffect(() => {
+        setFavorite(isfavorite)
+    }, [isfavorite])
+
     return (
         <div className={ classes["CollectionProduct-container"] }>
             {useAuth().role !== "" && !HideWishList && <div className={ classes["Add-to-favorite"] } onClick={handleClick}><RiStarSFill className={favorite ? classes["favorite"]  : ""}/></div>}
@@ -53,7 +57,7 @@ const CollectionProduct = ( {id, Name = "", Price = "", Image = "", Store = "", 
                     <h5 className={ classes["Product-name"] }>
                         {Name ? Name : ""}
                     </h5>
-                    <div className={ classes["Product-price"]}>                    
+                    <div className={ classes["Product-price"]}>
                         <p>
                         { Price ? Intl.NumberFormat("en-US", {
                                 style: "currency",
@@ -62,7 +66,7 @@ const CollectionProduct = ( {id, Name = "", Price = "", Image = "", Store = "", 
                             : 
                             ""
                         }  
-                        </p>              
+                        </p>
                     </div>
                 </div>
             </Link>
