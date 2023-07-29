@@ -1,7 +1,7 @@
 import classes from './Store.module.scss';
 
 import { useState, useEffect, useRef } from 'react';
-import { useOutlet, Outlet, Link, useOutletContext, useNavigate } from 'react-router-dom';
+import { useOutlet, Outlet, Link, useOutletContext, useNavigate, useLocation } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import { useAuth } from '../../core/AuthRoleUser';
 
@@ -17,6 +17,7 @@ import Spinner from '../../components/Spinner/Spinner';
 
 const StoreV = () => {    
     const outlet = useOutlet();    
+    const location = useLocation();
     const user = useAuth().role;
     const navigate = useNavigate();
     const [isloading, setIsLoading] = useState(true);
@@ -33,7 +34,7 @@ const StoreV = () => {
     const handleNoAuthMessage = useOutletContext();
 
     const GetProducts = () => {
-        setDone(false);
+        setDone(false);        
         fetch(`https://apit.mingo.studio/api/storeProduct/store/${useAuth().user._id}`).then(
             response => response.json().then(data => {
                 setProducts(data);
@@ -58,8 +59,10 @@ const StoreV = () => {
             handleNoAuthMessage();
             navigate('/');
             return;
-        }else {
-            GetProducts();            
+        }else {                                  
+            if (location.pathname == "/Store") {                
+                GetProducts();
+            }
         }
     }, [outlet]);
 

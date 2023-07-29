@@ -12,7 +12,7 @@ const StoreProduct = () => {
     const inputFile = useRef(null) ;
     const [imageInputTag, setImageInputTag] = useState([]);
 
-    const {id} = useParams();
+    const {id} = useParams();    
 
     const handleReturnClick = () => {
        navigate('/Store');
@@ -122,7 +122,7 @@ const StoreProduct = () => {
     }
     
     // Editing a product
-    const getProduct = () => {
+    const getProduct = () => {        
         setIsLoading(true);
         fetch(`https://apit.mingo.studio/api/storeProduct/id/${id}`)
         .then (
@@ -169,7 +169,7 @@ const StoreProduct = () => {
         )
     }
 
-    useEffect(() => {        
+    useEffect(() => {          
         if (id !== undefined) {
             getProduct();
             //getProductV2()

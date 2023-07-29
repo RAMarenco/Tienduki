@@ -17,7 +17,7 @@ const Product = () => {
     const {id, Store, idProduct} = useParams();
     const navigate = useNavigate();
 
-    const GetProduct = () => {
+    const GetProduct = () => {        
         setIsLoading(true)
         fetch(`https://apit.mingo.studio/api/storeProduct/id/${idProduct}`, {
             crossDomain: true,
